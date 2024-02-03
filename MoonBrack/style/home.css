@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'MoonBrack';
-    src: url('/fonts/Righteous-Regular.ttf') format('truetype');
+    src: url('../fonts/Righteous-Regular.ttf') format('truetype');
 }
 html{
     height: 100%;
@@ -23,6 +23,31 @@ header {
     padding: 4px;
     text-align: center;
     z-index: 2;
+}
+
+.banner {
+    max-height: 730px;
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
+    min-height: 597px;
+    width: 100%;
+    position: relative;
+}
+
+.banner h1{
+    color: white;
+    font-size: 70px;
+    top: 100px;
+    left:400px;
+    position: relative;
+    margin: auto;
+}
+
+section {
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
 }
 
 #logo {
@@ -63,78 +88,6 @@ header {
 #nav-left a:hover::before, #nav-right a:hover::before {
     width: 100%;
 }
-.cube{
-    position: absolute; /* Set position to absolute */
-    bottom: 10%; /* Align to the bottom */
-    left: 37%; /* Center horizontally */
-    transform: translateX(-50%); /* Adjust to center */
-    width: 300px;
-    height: 300px;
-    transform-style: preserve-3d;
-    transform: rotateX(-30deg);
-    animation: animate 10s linear infinite;
-    z-index: 0;
-}
-
-@keyframes animate {
-    0%{
-        transform: rotateX(-30deg) rotateY(0deg);
-
-    }
-    100%{
-        transform: rotateX(-30deg) rotateY(360deg);
-    }
-
-}
-
-.cube div{
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-}
-
-
-.cube div span{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(#151515, #00d0ff);
-    transform: rotateY( calc(90deg * var(--i))) translateZ(150px);
-
-}
-
-.top{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 300px;
-    height: 300px;
-    background: #222;
-    transform: rotateX(90deg) translateZ(150px);
-
-}
-
-.top::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 300px;
-    height: 300px;
-    background: #037288;
-    transform: translateZ(-380px);
-    filter: blur(20px);
-    box-shadow: 0 0 120px rgba(0, 208, 255, 0.2),
-                0 0 200px rgba(0, 208, 255, 0.4),
-                0 0 300px rgba(0, 208, 255, 0.6),
-                0 0 400px rgba(0,208,255,0.8),
-                0 0 500px rgba(0,208,255,1);
-
-}
 
 .page-content {
     position: relative;
@@ -147,3 +100,165 @@ header {
     margin-top: 90px;
     color: white;
 }
+
+.moon{
+    width: 300px;
+    height: 300px;
+    position: relative;
+    top: 230px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0 0 20px 20px #000 inset, 0 0 20px 2px;
+}
+
+.moon::after{
+    position: relative;
+    content: "";
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-color: black;
+    border-radius: 50%;
+    box-shadow: -40px -40px 50px 2px #000 inset;
+}
+
+.moon > div img{
+    width: 200%;
+    height: 300px;
+    animation: spin 40s linear alternate infinite;
+    /*background: url('../public/m1.jpg');*/
+    background-size: 100% 100%;
+}
+
+@keyframes spin {
+    to{
+        transform: translateX(-50%);
+    }
+}
+
+.page-content-1{
+    background-color: white;
+
+}
+
+.page-content-1 h2{
+    font-size: 50px;
+    text-align: center;
+}
+
+.divider {
+    height: 1px;
+    background: #000;
+    background: -webkit-linear-gradient(to left, rgb(255, 255, 255) 0%, rgb(50, 50, 50) 50%, rgb(255, 255, 255) 100%);
+}
+
+.divider.light {
+    background: #fff;
+    background: -webkit-linear-gradient(to left, rgb(90, 90, 90) 0%, rgb(255, 255, 255) 50%, rgb(90, 90, 90) 100%);
+}
+
+
+.divider.light:before {
+    position:relative;
+    float:left;
+    background: linear-gradient(to right, rgba(100, 100, 100, 0), rgba(100, 100, 100, 1) 50%);
+    margin-top:2px;
+    width:50%;
+    height:.5px;
+    content:"";
+}
+
+.divider.light:after {
+    position:relative;
+    float:right;
+    background: linear-gradient(to left, rgba(100, 100, 100, 0), rgba(100, 100, 100, 1) 50%);
+    margin-top:2px;
+    width:50%;
+    height:.5px;
+    content:"";
+}
+
+.divider:before {
+    position:relative;
+    float:left;
+    background: linear-gradient(to right, rgba(200, 200, 200, 0), rgba(200, 200, 200, 1) 50%);
+    margin-top:2px;
+    width:50%;
+    height:.5px;
+    content:"";
+}
+
+.divider:after {
+    position:relative;
+    float:right;
+    background: linear-gradient(to left, rgba(100, 200, 200, 0), rgba(200, 200, 200, 1) 50%);
+    margin-top:2px;
+    width:50%;
+    height:1px;
+    content:"";
+}
+/* Presentation only */
+.width80 {width:80%;margin:0px auto;padding-top:50px;}
+.light-background {background:#fff;margin-top:50px;width:100%;height:100px;}
+
+.icons-offer {
+    display: flex;
+    justify-content: space-around; /* Adjust as needed */
+    align-items: center;
+}
+
+.icon-container {
+    text-align: center;
+}
+
+.icon-container img {
+    width: 100px; /* Adjust the image size as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.page-content-2 h2{
+     color: white;
+    font-size: 50px;
+    text-align: center;
+}
+
+.price-cards-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.price-card {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 30%;
+    margin: 12px;
+}
+
+.price-card h3 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.price-card p.price {
+    color: #e44d26;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.price-card p.description {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+
