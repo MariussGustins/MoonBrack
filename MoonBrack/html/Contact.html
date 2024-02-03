@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/home.css">
 </head>
+<style>
+    body{
+        color: white;
+    }
+</style>
 <body>
 <header>
     <div id="nav-left">
@@ -20,5 +25,95 @@
         <a href="../html/Contact.html">Contact</a>
     </div>
 </header>
+
+<main>
+    <form action="#" method="post">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- Owners Information -->
+    <div class="owner">
+        <img src="../public/mariuss.jpeg" alt="Owner">
+        <p>Mariuss Gustins</p>
+        <p>Email: mariuss@moonbrack.com</p>
+        <p>Phone: +371 22061985</p>
+    </div>
+
+    <div class="owner">
+        <img src="../public/roberts.jpeg" alt="Owner">
+        <p>Roberts Blite</p>
+        <p>Email: roberts@moonbrack.com</p>
+        <p>Phone: +371 20233456</p>
+    </div>
+
+
+</main>
+
+<!-- Map -->
+<div id="map"></div>
+
+<!-- Google Maps API (replace YOUR_API_KEY with your actual API key) -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+
+<script>
+    // Initialize and add the map
+    function initMap() {
+        const mapOptions = {
+            center: { lat: 37.7749, lng: -122.4194 }, // Default: San Francisco, CA
+            zoom: 12
+        };
+        const map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    }
+</script>
+<footer class="modern-footer">
+    <div class="footer-content">
+        <div class="footer-column">
+            <img src="../public/Moonbrack_white.webp" alt="Logo" class="footer-logo">
+        </div>
+
+        <div class="footer-column">
+            <h4>Pages</h4>
+            <ul>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contacts</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Column -->
+        <div class="footer-column">
+            <h4>Contact</h4>
+            <p>Email: mariuss@moonbrack.com</p>
+            <p>Phone: +371 22061985</p>
+            <p>Address: 123 iela, Jelgava, Latvija</p>
+        </div>
+
+        <!-- Social Column -->
+        <div class="footer-column">
+            <h4>Connect With Us</h4>
+            <div class="social-links">
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <img src="../public/facebook-f.svg" alt="Facebook">
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <img src="../public/Twitter%20icon%20(1).svg" alt="Twitter">
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                    <img src="../public/LinkedIn%20icon%20(1).svg" alt="LinkedIn">
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
