@@ -1,0 +1,55 @@
+/* aboutus.css */
+
+body {
+    background-color: #151515;
+}
+
+header {
+    background-color: #333;
+}
+
+.banner h1 {
+    color: #fff;
+    font-size: 48px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.page-content-1 {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.divider {
+    background: -webkit-linear-gradient(to left, rgb(255, 255, 255, 0) 0%, rgb(50, 50, 50) 50%, rgb(255, 255, 255, 0) 100%);
+}
+
+.page-content-2 {
+    background-color: #151515;
+    color: #fff;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.price-card {
+    background-color: #222;
+    color: #fff;
+}
+
+.modern-footer {
+    background-color: #222;
+}
+
+.owner {
+    text-align: center;
+}
+
+.owner img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+/* Add any additional styles specific to the "About Us" page as needed */
